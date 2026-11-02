@@ -1,5 +1,7 @@
 project:
   type: book
+  resources:
+    - downloads/
 
 book:
   title: "Río Buritaca Watershed Atlas / Atlas de la Cuenca del Río Buritaca"

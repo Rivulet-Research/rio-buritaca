@@ -21,6 +21,11 @@ cfg <- list(
   # River mouth (pour point), taken from Google Maps
   pour_point = c(lon = -73.76813897233389, lat = 11.263051003083701),
 
+  # Reference places for maps (lon/lat). Buritaca village from OpenStreetMap;
+  # other gazetteers put it nearer the river mouth (about 11.262, -73.769).
+  town_buritaca = c(lon = -73.77065, lat = 11.2492),
+  city_santa_marta = c(lon = -74.199, lat = 11.241),
+
   # Snap distance in map units (metres, UTM). Verify visually.
   snap_dist_m = 500,
 

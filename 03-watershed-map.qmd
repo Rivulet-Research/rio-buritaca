@@ -38,14 +38,29 @@ plot_watershed_map(
 ```
 
 ::: {.content-visible when-format="html"}
+[Download the static map (PNG, 300 dpi) / Descargar el mapa estático (PNG, 300 dpi)](downloads/buritaca-watershed-map.png){download="buritaca-watershed-map.png"}
+:::
+
+::: {.content-visible when-format="html"}
 ```{r}
 #| label: interactive-map
 #| eval: !expr have_data
 library(leaflet)
 leaflet() |>
-  addProviderTiles(providers$Esri.WorldTopoMap) |>
+  addProviderTiles(providers$Esri.WorldTopoMap, group = "Topographic / Topográfico") |>
+  addProviderTiles(providers$Esri.WorldImagery, group = "Aerial imagery / Imagen aérea") |>
   addPolygons(data = watershed, fillColor = "blue", fillOpacity = 0.2, color = "darkblue", weight = 2) |>
   addPolylines(data = streams, color = "#0055ff", weight = 2) |>
-  addScaleBar(position = "bottomleft")
+  addCircleMarkers(
+    data = town_point("Buritaca", cfg$town_buritaca),
+    radius = 6, color = "black", weight = 2, fillColor = "white", fillOpacity = 1,
+    label = ~name,
+    labelOptions = labelOptions(noHide = TRUE, direction = "left", textsize = "13px")
+  ) |>
+  addScaleBar(position = "bottomleft") |>
+  addLayersControl(
+    baseGroups = c("Topographic / Topográfico", "Aerial imagery / Imagen aérea"),
+    options = layersControlOptions(collapsed = FALSE)
+  )
 ```
 :::

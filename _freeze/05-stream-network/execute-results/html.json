@@ -2,7 +2,7 @@
   "hash": "7f7c2e0ea7a03e2598fdf6a91535d506",
   "result": {
     "engine": "knitr",
-    "markdown": "\n::: {.cell}\n\n:::\n\n\n# Stream network / Red de drenaje {#sec-stream-network}\n\n::: {.panel-tabset}\n## English\n\n*Stream statistics are not available yet.*\n\n*TODO: Strahler stream order, main channel length, and longitudinal profile.*\n\n## Español {lang=\"es\"}\n\n*Las estadísticas de la red de drenaje aún no están disponibles.*\n\n*PENDIENTE: orden de Strahler, longitud del cauce principal y perfil longitudinal.*\n:::\n",
+    "markdown": "\n::: {.cell}\n\n:::\n\n\n# Stream network / Red de drenaje {#sec-stream-network}\n\n::: {.panel-tabset}\n## English\n\nWith a threshold of 1 km², the mapped stream network is 208.4 km long, giving a drainage density of 0.70 km/km².\n\n*TODO: Strahler stream order, main channel length, and longitudinal profile.*\n\n## Español {lang=\"es\"}\n\nCon un umbral de 1 km², la red de drenaje cartografiada tiene 208.4 km de longitud, lo que da una densidad de drenaje de 0.70 km/km².\n\n*PENDIENTE: orden de Strahler, longitud del cauce principal y perfil longitudinal.*\n:::\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
