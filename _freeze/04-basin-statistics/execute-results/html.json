@@ -1,0 +1,15 @@
+{
+  "hash": "3a5b6dbd487aa35e0a95567ccdef0a48",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n::: {.cell}\n\n:::\n\n\n# Basin statistics / Estadísticas de la cuenca {#sec-basin-statistics}\n\n::: {.panel-tabset}\n## English\n\n*Statistics are not available yet. Run scripts/run_all.R.*\n\n## Español {lang=\"es\"}\n\n*Las estadísticas aún no están disponibles. Ejecute scripts/run_all.R.*\n:::\n\n\n::: {.cell}\n\n:::\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

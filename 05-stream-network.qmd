@@ -1,0 +1,22 @@
+```{r}
+#| label: setup
+source(here::here("scripts", "helpers.R"))
+stats <- read_stats()
+have_stats <- !is.null(stats)
+```
+
+# Stream network / Red de drenaje {#sec-stream-network}
+
+::: {.panel-tabset}
+## English
+
+`r if (have_stats) paste0("With a threshold of ", stats$stream_threshold_km2, " km², the mapped stream network is ", fmt(stats$stream_length_km), " km long, giving a drainage density of ", fmt(stats$drainage_density_km_per_km2, 2), " km/km².") else "*Stream statistics are not available yet.*"`
+
+*TODO: Strahler stream order, main channel length, and longitudinal profile.*
+
+## Español {lang="es"}
+
+`r if (have_stats) paste0("Con un umbral de ", stats$stream_threshold_km2, " km², la red de drenaje cartografiada tiene ", fmt(stats$stream_length_km), " km de longitud, lo que da una densidad de drenaje de ", fmt(stats$drainage_density_km_per_km2, 2), " km/km².") else "*Las estadísticas de la red de drenaje aún no están disponibles.*"`
+
+*PENDIENTE: orden de Strahler, longitud del cauce principal y perfil longitudinal.*
+:::

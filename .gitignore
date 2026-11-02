@@ -48,3 +48,11 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Quarto book output and generated data (keep _freeze/)
+/_book/
+/.quarto/
+/data/
+*_files/
+
+**/*.quarto_ipynb

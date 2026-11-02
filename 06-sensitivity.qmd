@@ -1,0 +1,23 @@
+# Sensitivity and validation / Sensibilidad y validación {#sec-sensitivity}
+
+::: {.panel-tabset}
+## English
+
+This chapter will assess how robust the delineation is, and compare it with independent datasets.
+
+*TODO:*
+
+- *Compare basin area and outline between Copernicus GLO-30 and the `elevatr` DEM.*
+- *Vary the stream threshold and the snap distance and report the effect on basin area and drainage density.*
+- *Compare against HydroSHEDS/HydroBASINS, MERIT Hydro, IDEAM zonation, and mapped river lines (availability to be checked).*
+
+## Español {lang="es"}
+
+Este capítulo evaluará qué tan robusta es la delimitación y la comparará con conjuntos de datos independientes.
+
+*PENDIENTE:*
+
+- *Comparar el área y el contorno de la cuenca entre Copernicus GLO-30 y el MDE de `elevatr`.*
+- *Variar el umbral de cauce y la distancia de ajuste, e informar su efecto en el área de la cuenca y la densidad de drenaje.*
+- *Comparar con HydroSHEDS/HydroBASINS, MERIT Hydro, la zonificación del IDEAM y las líneas de ríos cartografiadas (disponibilidad por verificar).*
+:::

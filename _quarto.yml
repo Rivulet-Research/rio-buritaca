@@ -1,0 +1,43 @@
+project:
+  type: book
+
+book:
+  title: "Río Buritaca Watershed Atlas / Atlas de la Cuenca del Río Buritaca"
+  subtitle: "Sierra Nevada de Santa Marta, Colombia"
+  repo-url: https://github.com/Rivulet-Research/rio-buritaca
+  downloads: [docx]
+  chapters:
+    - index.qmd
+    - part: "Study design / Diseño del estudio"
+      chapters:
+        - 01-study-area.qmd
+        - 02-methods.qmd
+    - part: "Results / Resultados"
+      chapters:
+        - 03-watershed-map.qmd
+        - 04-basin-statistics.qmd
+        - 05-stream-network.qmd
+    - part: "Assessment / Evaluación"
+      chapters:
+        - 06-sensitivity.qmd
+        - 07-discussion.qmd
+    - references.qmd
+
+bibliography: references.bib
+lang: en
+
+crossref:
+  fig-title: "Figure / Figura"
+  tbl-title: "Table / Tabla"
+
+format:
+  html:
+    theme: cosmo
+  docx:
+    number-sections: true
+
+execute:
+  echo: false
+  warning: false
+  message: false
+  freeze: auto

@@ -1,0 +1,11 @@
+# Discussion / Discusión {#sec-discussion}
+
+::: {.panel-tabset}
+## English
+
+*TODO: limitations (DEM resolution, pour point snapping, stream threshold) and next steps (land cover, climate, protected areas and communities).*
+
+## Español {lang="es"}
+
+*PENDIENTE: limitaciones (resolución del MDE, ajuste del punto de salida, umbral de cauce) y próximos pasos (cobertura del suelo, clima, áreas protegidas y comunidades).*
+:::

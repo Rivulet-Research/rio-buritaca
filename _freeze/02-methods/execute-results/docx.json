@@ -1,0 +1,21 @@
+{
+  "hash": "22d978b585a5c2e51d4bb0a9cb07e66f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n::: {.cell}\n\n:::\n\n\n# Methods / Métodos {#sec-methods}\n\n::: {.panel-tabset}\n## English\n\nThe watershed was delineated with a standard digital elevation model (DEM) workflow:\n\n1. The Copernicus GLO-30 DEM (30 m) was downloaded, mosaicked, cropped to the study extent, and projected to UTM zone 18N (EPSG:32618).\n2. Depressions in the DEM were breached to produce a hydrologically conditioned surface (WhiteboxTools).\n3. D8 flow directions and flow accumulation were computed.\n4. Streams were defined as cells draining at least 1 km².\n5. The river mouth was snapped to the highest flow accumulation within 500 m, and the watershed was traced upstream from that point.\n6. The results were converted to vector layers and summarized.\n\nAll steps are scripted in the `scripts/` folder and parameters are set in `scripts/00_config.R`.\n\n*TODO: justify the stream threshold and snap distance after the sensitivity analysis (@sec-sensitivity).*\n\n## Español {lang=\"es\"}\n\nLa cuenca se delimitó con un flujo de trabajo estándar basado en un modelo digital de elevación (MDE):\n\n1. Se descargó el MDE Copernicus GLO-30 (30 m), se unieron los mosaicos, se recortó a la zona de estudio y se proyectó a UTM zona 18N (EPSG:32618).\n2. Se corrigieron las depresiones del MDE para obtener una superficie hidrológicamente consistente (WhiteboxTools).\n3. Se calcularon las direcciones de flujo D8 y la acumulación de flujo.\n4. Los cauces se definieron como las celdas que drenan al menos 1 km².\n5. La desembocadura se ajustó a la mayor acumulación de flujo dentro de 500 m, y la cuenca se trazó aguas arriba desde ese punto.\n6. Los resultados se convirtieron en capas vectoriales y se resumieron.\n\nTodos los pasos están en scripts en la carpeta `scripts/` y los parámetros se definen en `scripts/00_config.R`.\n\n*PENDIENTE: justificar el umbral de cauce y la distancia de ajuste tras el análisis de sensibilidad (@sec-sensitivity).*\n:::\n",
+    "supporting": [
+      "02-methods_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

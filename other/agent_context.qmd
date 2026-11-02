@@ -1,0 +1,21 @@
+---
+title: "agent_context"
+format: html
+---
+
+This document is for providing detailed instructions and feedback to posit assistant. It should not be modified by any agent.
+
+11/2/2026
+
+Responses to open questions in buritaca-projact-plan.md:
+
+- Is the goal a single-basin descriptive atlas, or a broader analysis (land cover, climate, communities)?
+  - Single basin descriptive atlas for now. Other details later
+- Preferred DEM source and resolution (Terrain Tiles via `elevatr` vs. Copernicus GLO-30 vs. SRTM)?
+  - I do not know
+- Should rendered `docs/` be committed (GitHub Pages) or built in CI?
+  - lets plan to commit chnages tro github, and render the quarto book published to github pages using a terminal command (is it something like gh-pages?)
+- Language of the book: English, Spanish, or both?
+  - Two versions, one in english and one in spanish
+- Is there a reference outline or area value for the Buritaca basin to validate against?
+  - i do not know of this information, if it does already exist

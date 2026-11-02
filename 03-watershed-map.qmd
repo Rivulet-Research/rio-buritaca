@@ -1,0 +1,51 @@
+```{r}
+#| label: setup
+source(here::here("scripts", "helpers.R"))
+have_data <- outputs_ready(paths$watershed, paths$streams)
+if (have_data) {
+  watershed <- read_layer(paths$watershed)
+  streams <- read_layer(paths$streams)
+}
+```
+
+# Watershed map / Mapa de la cuenca {#sec-watershed-map}
+
+::: {.panel-tabset}
+## English
+
+This chapter shows the delineated Río Buritaca watershed and its stream network. In the web version an interactive map is also provided.
+
+`r if (!have_data) "*The processing pipeline has not been run yet, so maps are not available. Run scripts/run_all.R.*"`
+
+## Español {lang="es"}
+
+Este capítulo muestra la cuenca delimitada del río Buritaca y su red de drenaje. En la versión web también se incluye un mapa interactivo.
+
+`r if (!have_data) "*El flujo de procesamiento aún no se ha ejecutado, por lo que no hay mapas disponibles. Ejecute scripts/run_all.R.*"`
+:::
+
+```{r}
+#| label: fig-static-map
+#| eval: !expr have_data
+#| fig-cap: "Río Buritaca watershed and streams / Cuenca y cauces del río Buritaca"
+#| fig-width: 6.5
+#| fig-height: 5
+plot_watershed_map(
+  watershed, streams,
+  title = "Río Buritaca",
+  subtitle = "Sierra Nevada de Santa Marta, Colombia"
+)
+```
+
+::: {.content-visible when-format="html"}
+```{r}
+#| label: interactive-map
+#| eval: !expr have_data
+library(leaflet)
+leaflet() |>
+  addProviderTiles(providers$Esri.WorldTopoMap) |>
+  addPolygons(data = watershed, fillColor = "blue", fillOpacity = 0.2, color = "darkblue", weight = 2) |>
+  addPolylines(data = streams, color = "#0055ff", weight = 2) |>
+  addScaleBar(position = "bottomleft")
+```
+:::

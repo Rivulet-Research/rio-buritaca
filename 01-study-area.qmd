@@ -1,0 +1,15 @@
+# Study area / Área de estudio {#sec-study-area}
+
+::: {.panel-tabset}
+## English
+
+The Río Buritaca drains the northern slope of the Sierra Nevada de Santa Marta toward the Caribbean coast of Colombia. The river mouth used as the outlet of the delineation is at 11.2631° N, 73.7681° W.
+
+*TODO: describe the geography, climate, land use, and people of the basin, with sources.*
+
+## Español {lang="es"}
+
+El río Buritaca drena la vertiente norte de la Sierra Nevada de Santa Marta hacia la costa Caribe de Colombia. La desembocadura utilizada como punto de salida de la delimitación se ubica en 11,2631° N, 73,7681° O.
+
+*PENDIENTE: describir la geografía, el clima, el uso del suelo y la población de la cuenca, con fuentes.*
+:::

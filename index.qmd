@@ -1,0 +1,19 @@
+# Preface / Prefacio {.unnumbered}
+
+::: {.panel-tabset}
+## English
+
+This atlas describes the Río Buritaca watershed on the northern slope of the Sierra Nevada de Santa Marta, Colombia. It documents how the basin and its stream network were delineated from open elevation data, and presents maps and basic statistics for the basin.
+
+The book is bilingual. Each chapter has an English and a Spanish version of the text. In the web version, use the tabs to switch language; in the Word version, the two languages follow one another.
+
+*Status: draft. The analysis has not yet been run, and the Spanish text is a draft pending review.*
+
+## Español {lang="es"}
+
+Este atlas describe la cuenca del río Buritaca, en la vertiente norte de la Sierra Nevada de Santa Marta, Colombia. Documenta cómo se delimitaron la cuenca y su red de drenaje a partir de datos abiertos de elevación, y presenta mapas y estadísticas básicas de la cuenca.
+
+El libro es bilingüe. Cada capítulo tiene una versión del texto en inglés y otra en español. En la versión web, use las pestañas para cambiar de idioma; en la versión de Word, los dos idiomas aparecen uno después del otro.
+
+*Estado: borrador. El análisis aún no se ha ejecutado y el texto en español es un borrador pendiente de revisión.*
+:::

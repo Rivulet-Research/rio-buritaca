@@ -1,0 +1,38 @@
+```{r}
+#| label: setup
+source(here::here("scripts", "helpers.R"))
+```
+
+# Methods / Métodos {#sec-methods}
+
+::: {.panel-tabset}
+## English
+
+The watershed was delineated with a standard digital elevation model (DEM) workflow:
+
+1. The Copernicus GLO-30 DEM (30 m) was downloaded, mosaicked, cropped to the study extent, and projected to UTM zone 18N (EPSG:32618).
+2. Depressions in the DEM were breached to produce a hydrologically conditioned surface (WhiteboxTools).
+3. D8 flow directions and flow accumulation were computed.
+4. Streams were defined as cells draining at least `r cfg$stream_threshold_km2` km².
+5. The river mouth was snapped to the highest flow accumulation within `r cfg$snap_dist_m` m, and the watershed was traced upstream from that point.
+6. The results were converted to vector layers and summarized.
+
+All steps are scripted in the `scripts/` folder and parameters are set in `scripts/00_config.R`.
+
+*TODO: justify the stream threshold and snap distance after the sensitivity analysis (@sec-sensitivity).*
+
+## Español {lang="es"}
+
+La cuenca se delimitó con un flujo de trabajo estándar basado en un modelo digital de elevación (MDE):
+
+1. Se descargó el MDE Copernicus GLO-30 (30 m), se unieron los mosaicos, se recortó a la zona de estudio y se proyectó a UTM zona 18N (EPSG:32618).
+2. Se corrigieron las depresiones del MDE para obtener una superficie hidrológicamente consistente (WhiteboxTools).
+3. Se calcularon las direcciones de flujo D8 y la acumulación de flujo.
+4. Los cauces se definieron como las celdas que drenan al menos `r cfg$stream_threshold_km2` km².
+5. La desembocadura se ajustó a la mayor acumulación de flujo dentro de `r cfg$snap_dist_m` m, y la cuenca se trazó aguas arriba desde ese punto.
+6. Los resultados se convirtieron en capas vectoriales y se resumieron.
+
+Todos los pasos están en scripts en la carpeta `scripts/` y los parámetros se definen en `scripts/00_config.R`.
+
+*PENDIENTE: justificar el umbral de cauce y la distancia de ajuste tras el análisis de sensibilidad (@sec-sensitivity).*
+:::

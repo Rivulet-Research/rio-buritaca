@@ -1,0 +1,33 @@
+```{r}
+#| label: setup
+source(here::here("scripts", "helpers.R"))
+stats <- read_stats()
+have_stats <- !is.null(stats)
+```
+
+# Basin statistics / Estadísticas de la cuenca {#sec-basin-statistics}
+
+::: {.panel-tabset}
+## English
+
+`r if (have_stats) paste0("The watershed covers ", fmt(stats$area_km2), " km² with a perimeter of ", fmt(stats$perimeter_km), " km. Elevation ranges from ", fmt(stats$elev_min_m, 0), " to ", fmt(stats$elev_max_m, 0), " m (mean ", fmt(stats$elev_mean_m, 0), " m), and the mean slope is ", fmt(stats$slope_mean_deg), "°.") else "*Statistics are not available yet. Run scripts/run_all.R.*"`
+
+## Español {lang="es"}
+
+`r if (have_stats) paste0("La cuenca abarca ", fmt(stats$area_km2), " km² con un perímetro de ", fmt(stats$perimeter_km), " km. La elevación varía de ", fmt(stats$elev_min_m, 0), " a ", fmt(stats$elev_max_m, 0), " m (media de ", fmt(stats$elev_mean_m, 0), " m) y la pendiente media es de ", fmt(stats$slope_mean_deg), "°.") else "*Las estadísticas aún no están disponibles. Ejecute scripts/run_all.R.*"`
+:::
+
+```{r}
+#| label: fig-hypsometry
+#| eval: !expr file.exists(paths$hypsometry)
+#| fig-cap: "Hypsometric curve / Curva hipsométrica"
+#| fig-width: 6
+#| fig-height: 4
+library(ggplot2)
+ggplot(read.csv(paths$hypsometry), aes(area_above_frac, elevation_m)) +
+  geom_line() +
+  labs(
+    x = "Fraction of basin area above elevation / Fracción del área sobre la elevación",
+    y = "Elevation (m) / Elevación (m)"
+  )
+```
