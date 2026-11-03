@@ -32,7 +32,7 @@ plot_watershed_map <- function(watershed, streams, title = NULL, subtitle = NULL
     ) +
     geom_sf(data = watershed, fill = "yellow", alpha = 0.3, color = NA) +
     geom_sf(data = watershed, fill = NA, color = "yellow", linewidth = 0.8) +
-    geom_sf(data = streams, color = "cyan", linewidth = 0.4) +
+    geom_sf(data = streams, aes(linewidth = order), color = "cyan", lineend = "round") + scale_linewidth(range = c(0.25, 1.1), guide = "none") +
     geom_sf(data = town_point("Buritaca", cfg$town_buritaca), shape = 21, fill = "white", color = "black", size = 2.5) +
     geom_sf_label(
       data = town_point("Buritaca", cfg$town_buritaca), aes(label = name),

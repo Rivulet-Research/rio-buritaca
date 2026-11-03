@@ -41,6 +41,7 @@ paths <- list(
   d8_pntr = here("data", "d8_pointer.tif"),
   d8_accum = here("data", "d8_accum.tif"),
   streams_raster = here("data", "streams_raster.tif"),
+  strahler_raster = here("data", "strahler.tif"),
   streams_vector = here("data", "streams_raw.shp"),
   pour_point = here("data", "pour_point.shp"),
   pour_point_snapped = here("data", "pour_point_snapped.shp"),

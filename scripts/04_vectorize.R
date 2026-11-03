@@ -20,10 +20,15 @@ st_crs(watershed) <- cfg$crs_proj
 st_write(watershed, paths$watershed, delete_dsn = TRUE, quiet = TRUE)
 
 # Streams: trace lines along the D8 pointer instead of cell edges
+wbt_strahler_stream_order(
+  d8_pntr = paths$d8_pntr, streams = paths$streams_raster, output = paths$strahler_raster
+)
 wbt_raster_streams_to_vector(
-  streams = paths$streams_raster, d8_pntr = paths$d8_pntr, output = paths$streams_vector
+  streams = paths$strahler_raster, d8_pntr = paths$d8_pntr, output = paths$streams_vector
 )
 streams <- st_read(paths$streams_vector, quiet = TRUE)
 st_crs(streams) <- cfg$crs_proj
+# Strahler order is carried in the STRM_VAL attribute
+streams$order <- as.integer(streams$STRM_VAL)
 streams <- st_intersection(streams, watershed)
 st_write(streams, paths$streams, delete_dsn = TRUE, quiet = TRUE)

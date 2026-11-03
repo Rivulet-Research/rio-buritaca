@@ -50,7 +50,7 @@ leaflet() |>
   addProviderTiles(providers$Esri.WorldTopoMap, group = "Topographic / Topográfico") |>
   addProviderTiles(providers$Esri.WorldImagery, group = "Aerial imagery / Imagen aérea") |>
   addPolygons(data = watershed, fillColor = "blue", fillOpacity = 0.2, color = "darkblue", weight = 2) |>
-  addPolylines(data = streams, color = "#0055ff", weight = 2) |>
+  addPolylines(data = streams, color = "#0055ff", weight = ~ 1 + order) |>
   addCircleMarkers(
     data = town_point("Buritaca", cfg$town_buritaca),
     radius = 6, color = "black", weight = 2, fillColor = "white", fillOpacity = 1,

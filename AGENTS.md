@@ -32,9 +32,13 @@ Bilingual (English/Spanish) Quarto book, a single-basin descriptive atlas of the
   - Town positions are in `cfg$town_buritaca` (OSM village node, lon -73.77065, lat 11.2492, about 1.5 km south of the river mouth; other gazetteers put it near the mouth) and `cfg$city_santa_marta`. The user has not yet confirmed the Buritaca position.
 - Publishing: commit source to `main`, then run `quarto publish gh-pages` in the terminal.
 
-## Status (2026-11-02)
+- Stream order: `04_vectorize.R` computes Strahler order (`wbt_strahler_stream_order`, raster at `paths$strahler_raster`) and stores it as an `order` column in `buritaca_streams.gpkg`. Both maps scale line thickness by order, with no legend: ggplot `scale_linewidth(range = c(0.25, 1.1), guide = "none")` in `plot_watershed_map`, leaflet `weight = ~ 1 + order`.
+- Basin statistics chapter (04): prose plus a bullet with total stream length in mi and km and the current parameters (D8 accumulation, DEM cell size and source, stream threshold in km² and cells, snap distance). `05_basin_stats.R` writes `stream_length_mi`, `stream_threshold_cells` and `dem_cell_size_m` to `basin_stats.csv`.
+
+## Status (2026-11-03)
 - Pipeline (`source("scripts/run_all.R")`) ran successfully. Basin area is about 299.8 km² (a Banco de la República table gives 305 km²); the snapped pour point is on the main channel about 259 m south of the Google Maps mouth, where the DEM has NoData water cells.
 - Packages installed: whitebox (with binary), elevatr, ggspatial, prettymapr.
 - ggplot `annotation_map_tile` basemaps do not draw when zoomed with `coord_sf` limits; use leaflet for close-up checks.
-- Not yet done: sensitivity analysis (DEM source, threshold, snap distance), Strahler order and main channel profile, validation against reference datasets (HydroSHEDS, MERIT Hydro, IDEAM), study area and discussion text, Spanish review, first `quarto publish gh-pages`.
+- Stream length is about 208.4 km (129.5 mi) at the 1 km² threshold (1,076 cells, 30.5 m cells); Strahler orders 1 to 4 (80, 41, 12, 26 segments).
+- Not yet done: sensitivity analysis (DEM source, threshold, snap distance), Strahler summary table and main channel profile, validation against reference datasets (HydroSHEDS, MERIT Hydro, IDEAM), study area and discussion text, Spanish review, first `quarto publish gh-pages`.
 - Also pending: tile attribution (Esri, OpenStreetMap) in map captions in both languages; the preface still says the analysis has not been run; DOCX not re-checked since the imagery and inset changes; leaflet streams may need a lighter colour on imagery; commit everything (nothing has been committed or pushed yet); update the project plan for changes since v3 (sea mask, maps).
