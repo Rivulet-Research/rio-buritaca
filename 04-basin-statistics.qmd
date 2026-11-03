@@ -12,9 +12,13 @@ have_stats <- !is.null(stats)
 
 `r if (have_stats) paste0("The watershed covers ", fmt(stats$area_km2), " km² with a perimeter of ", fmt(stats$perimeter_km), " km. Elevation ranges from ", fmt(stats$elev_min_m, 0), " to ", fmt(stats$elev_max_m, 0), " m (mean ", fmt(stats$elev_mean_m, 0), " m), and the mean slope is ", fmt(stats$slope_mean_deg), "°.") else "*Statistics are not available yet. Run scripts/run_all.R.*"`
 
+`r if (have_stats) paste0("- Estimated total stream length: ", fmt(stats$stream_length_mi, 1), " mi (", fmt(stats$stream_length_km, 1), " km)\n  - Parameters: D8 flow accumulation on a ", fmt(stats$dem_cell_size_m, 0), " m DEM (", stats$dem_source, "); stream threshold ", stats$stream_threshold_km2, " km² (", stats$stream_threshold_cells, " cells); pour point snap distance ", stats$snap_dist_m, " m.")`
+
 ## Español {lang="es"}
 
 `r if (have_stats) paste0("La cuenca abarca ", fmt(stats$area_km2), " km² con un perímetro de ", fmt(stats$perimeter_km), " km. La elevación varía de ", fmt(stats$elev_min_m, 0), " a ", fmt(stats$elev_max_m, 0), " m (media de ", fmt(stats$elev_mean_m, 0), " m) y la pendiente media es de ", fmt(stats$slope_mean_deg), "°.") else "*Las estadísticas aún no están disponibles. Ejecute scripts/run_all.R.*"`
+
+`r if (have_stats) paste0("- Longitud total estimada de cauces: ", fmt(stats$stream_length_mi, 1), " mi (", fmt(stats$stream_length_km, 1), " km)\n  - Parámetros: acumulación de flujo D8 sobre un MDE de ", fmt(stats$dem_cell_size_m, 0), " m (", stats$dem_source, "); umbral de cauce ", stats$stream_threshold_km2, " km² (", stats$stream_threshold_cells, " celdas); distancia de ajuste del punto de salida ", stats$snap_dist_m, " m.")`
 :::
 
 ```{r}
