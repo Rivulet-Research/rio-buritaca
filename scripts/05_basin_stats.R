@@ -31,7 +31,10 @@ stats <- data.frame(
   slope_mean_deg = global(slope_deg, "mean", na.rm = TRUE)[[1]],
   stream_length_km = stream_km,
   drainage_density_km_per_km2 = stream_km / area_km2,
+  stream_length_mi = stream_km / 1.609344,
   stream_threshold_km2 = cfg$stream_threshold_km2,
+  stream_threshold_cells = round(cfg$stream_threshold_km2 * 1e6 / res(dem)[1]^2),
+  dem_cell_size_m = res(dem)[1],
   snap_dist_m = cfg$snap_dist_m
 )
 write.csv(stats, paths$basin_stats, row.names = FALSE)
